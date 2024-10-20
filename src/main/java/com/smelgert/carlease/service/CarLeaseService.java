@@ -60,7 +60,7 @@ public class CarLeaseService {
             existingCar.setModel(car.getModel());
             existingCar.setVersion(car.getVersion());
             existingCar.setNumberOfDoors(car.getNumberOfDoors());
-            existingCar.setCO2(car.getCO2());
+            existingCar.setCo2Emission(car.getCo2Emission());
             existingCar.setGrossPrice(car.getGrossPrice());
             existingCar.setNettPrice(car.getNettPrice());
 

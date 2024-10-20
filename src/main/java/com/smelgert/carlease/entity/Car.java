@@ -1,15 +1,13 @@
 package com.smelgert.carlease.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @Entity
 @Data
@@ -26,11 +24,12 @@ public class Car {
     private String model;
     private String version;
     private Integer numberOfDoors;
-    private String CO2;
-    private String grossPrice;
-    private String nettPrice;
+    private double co2Emission;
+    private BigDecimal grossPrice;
+    private BigDecimal nettPrice;
 
     @ManyToOne
+    @JoinColumn(name = "customer_id")
     @JsonBackReference
     private Customer customer;
 
